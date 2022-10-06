@@ -4,6 +4,9 @@ public:
         int m = matrix.size();
         int n = matrix[0].size();
         int colflag = 1;
+        
+        //taking a flag if 0th column contains a zero
+        
         for( int i = 0; i < m; i++)
         {
             if( matrix[i][0] == 0 ) colflag = 0;
@@ -16,6 +19,8 @@ public:
                 }
             }
         }
+        
+        //iterating in reverse manner to avoid changes in first row effect others
         
         for( int i = m - 1; i >= 0; i--)
         {
