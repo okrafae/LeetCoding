@@ -1,31 +1,30 @@
 class Solution {
 public:
     void nextPermutation(vector<int>& nums) {
-        if( nums.size() == 1 ) return;
-        int i, arraySorted = 1,rightMinimum = INT_MAX, prevMinimum = INT_MAX, minimumIndex=nums.size() - 1;
-        for( i = nums.size() - 1 ; i > 0; i--)
+        
+        int n = nums.size(), peakIndex, justGreaterIndex;
+        for( int i = n - 1; i > 0; i--)
         {
             if( nums[i] > nums[i-1] )
             {
-                int j = i;
-                while( j < nums.size() && nums[j] > nums[i-1] )
-                {
-                    prevMinimum = rightMinimum;
-                    rightMinimum = min( rightMinimum, nums[j] );
-                    if( prevMinimum != rightMinimum ) minimumIndex = j;
-                    j++;
-                }
-                swap( nums[minimumIndex], nums[i-1]);
-                arraySorted = 0;
+                peakIndex = i - 1;
                 break;
             }
         }
-        if( arraySorted )
+        if( peakIndex == -1 ) reverse( nums.begin(), nums.end());
+        else
         {
-            sort( nums.begin(), nums.end());
-            return;
+            for( int i = n - 1; i > peakIndex; i--)
+            {
+                if( nums[i] > nums[peakIndex] )
+                {
+                    justGreaterIndex = i;
+                    break;
+                }
+            }
+            swap( nums[justGreaterIndex],nums[peakIndex]);
+            reverse(nums.begin() + peakIndex + 1, nums.end());
         }
-        sort( nums.begin() + i, nums.end());
-        return;
+        
     }
 };
