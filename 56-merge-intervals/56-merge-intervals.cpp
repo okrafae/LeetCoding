@@ -14,15 +14,11 @@ public:
                 merge.pop_back();
 
             }
+            // both have some common elements in the range
             else if( merge[n-2][1] >= merge[n-1][0])
             {
                 merge[n-2][1] = max( merge[n-2][1],merge[n-1][1]);                                           merge.pop_back();
-            }
-            else if( merge[n-2][0] < merge[n-1][0])
-            {
-                continue;
-            }
-            
+            }            
         }
         return merge;
     }
