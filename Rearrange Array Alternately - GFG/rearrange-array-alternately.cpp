@@ -17,34 +17,34 @@ class Solution{
     { 
     	
     	// Your code here
-    	int firstHalfIndex = 1;
-    	int secondHalfIndex =  n%2==0? n-2 : n-1;
-    	 for( int i = 0; i < n; i++)
-    	 {
-    	     if( i < n/2 )
-    	     {
-    	         arr[i] = arr[i] * n + firstHalfIndex;
-    	         firstHalfIndex += 2;
-    	     }
-    	     else
-    	     {
-    	        arr[i] = arr[i]*n + secondHalfIndex;
-    	        secondHalfIndex -= 2;
-    	     }
-    	 }
+    	int a = 1;
+    	int b = n%2== 0 ? n-2 : n-1;
+    	for( int i = 0; i < n; i++)
+    	{
+    	    if( i < n/2 )
+    	    {
+    	        arr[i] = arr[i]*n + a;
+    	        a+=2;
+    	    }
+    	    else
+    	    {
+    	        arr[i] = arr[i]*n + b;
+    	        b-=2;
+    	    }
+    	}
+    	
+    	for( int i = 0; i < n; i++)
+    	{
+    	    while( arr[i]%n != i )
+    	    {
+    	        swap( arr[i], arr[ arr[i]%n ]);
+    	    }
+    	}
     	 
-    	 for( int i = 0; i < n; i++)
-    	 {
-    	     while( arr[i] % n != i )
-    	     {
-    	         swap( arr[i], arr[ arr[i]%n ]);
-    	     }
-    	 }
-    	 
-    	 for( int i = 0; i < n; i++)
-    	 {
-    	     arr[i] /= n;
-    	 }
+    	for( int i = 0; i < n; i++)
+    	{
+    	    arr[i] /= n;
+    	}
     }
 };
 
