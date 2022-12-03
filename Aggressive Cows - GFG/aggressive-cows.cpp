@@ -30,13 +30,13 @@ public:
     
         // Write your code here
         sort(stalls.begin(),stalls.end());
-        long long int low = 0, high = stalls[n-1], prevLow = 0;
+        long long int low = 0, high = stalls[n-1], ans = 0;
         while( low <= high )
         {
             long long int mid = low + ( high - low)/2;
             if( isPossible(mid,k,n,stalls) )
             {
-                prevLow = mid;
+                ans = mid;
                 low = mid+1;
             }
             else
@@ -44,7 +44,7 @@ public:
                 high = mid - 1;
             }
         }
-        return prevLow;
+        return ans;
     }
 };
 
