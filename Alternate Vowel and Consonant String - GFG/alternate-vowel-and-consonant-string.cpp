@@ -4,21 +4,21 @@ using namespace std;
 
 
 // } Driver Code Ends
-
+class Solution{
+    public:
+    
     bool isVowel( int i, string &S)
     {
         if( S[i] == 'a' || S[i] == 'e' || S[i] == 'i' || S[i] == 'o' || S[i] == 'u' ) return true;
         return false;
     }
     
-class Solution{
-    public:
-    
-
-    
     string rearrange (string S, int N)
     {
         // your code here
+        
+   
+
         vector<int> c(26,0),v(26,0);
         int vowelCount = 0, consCount = 0;
         for( int i = 0; i < N; i++)
