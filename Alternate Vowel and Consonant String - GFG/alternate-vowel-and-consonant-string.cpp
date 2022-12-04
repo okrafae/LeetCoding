@@ -5,9 +5,9 @@ using namespace std;
 
 // } Driver Code Ends
 
-    bool isVowel( char S)
+    bool isVowel( int i, string &S)
     {
-        if( S == 'a' || S == 'e' || S == 'i' || S == 'o' || S == 'u' ) return true;
+        if( S[i] == 'a' || S[i] == 'e' || S[i] == 'i' || S[i] == 'o' || S[i] == 'u' ) return true;
         return false;
     }
     
@@ -23,7 +23,7 @@ class Solution{
         int vowelCount = 0, consCount = 0;
         for( int i = 0; i < N; i++)
         {
-            if( isVowel(S[i]) )
+            if( isVowel(i,S) )
             {
                 v[S[i]- 'a']++;
                 vowelCount++;
