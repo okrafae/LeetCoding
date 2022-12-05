@@ -10,21 +10,22 @@ using namespace std;
 
 class Solution {
   public:
-    int shotestPath(vector<vector<int>> mat, int n, int m, int k) {
+
+        int shotestPath(vector<vector<int>> mat, int n, int m, int k) {
         // code here
-        vector<vector<int>> dir = {{0,1},{1,0},{0,-1},{-1,0}};
-        vector<vector<int>> vis(n, vector<int> (m,-1));
+        vector<vector<int>> diro = {{0,1},{1,0},{0,-1},{-1,0}};
+        vector<vector<int>> v(n, vector<int> (m,-1));
         
         queue<vector<int>> q;
         if( mat[0][0] == 1 )
         {
             q.push({0,0,k-1});
-            vis[0][0] = k-1;
+            v[0][0] = k-1;
         }
         else
         {
             q.push({0,0,k});
-            vis[0][0] = k;
+            v[0][0] = k;
         }
 
         int shortestPath = 0;
@@ -44,22 +45,22 @@ class Solution {
    
                 for( int i = 0; i < 4; i++)
                 {
-                    int nx = temp[0] + dir[i][0];
-                    int ny = temp[1] + dir[i][1];
+                    int nx = temp[0] + diro[i][0];
+                    int ny = temp[1] + diro[i][1];
                     int nk = temp[2];
                     
                     if( nx >= 0 && ny >= 0 && nx < n && ny < m )
                     {
-                        if( vis[nx][ny] < nk )
+                        if( v[nx][ny] < nk )
                         {
                             if( mat[nx][ny] == 1 && nk > 0 )
                             {
-                                vis[nx][ny] = nk-1;
+                                v[nx][ny] = nk-1;
                                 q.push({nx,ny,nk-1});
                             }
                             else if( mat[nx][ny] == 0 )
                             {
-                                vis[nx][ny] = nk;
+                                v[nx][ny] = nk;
                                 q.push({nx,ny,nk});
                             }
                         }
@@ -70,6 +71,7 @@ class Solution {
         return -1;
     }
 };
+        
 
 //{ Driver Code Starts.
 
