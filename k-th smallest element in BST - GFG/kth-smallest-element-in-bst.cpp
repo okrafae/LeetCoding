@@ -93,24 +93,25 @@ struct Node {
 
 class Solution {
   public:
-  
-  int noOfElements( Node *root )
+    // Return the Kth smallest element in the given BST
+    
+  int noOfElement( Node *root )
   {
       if( root == NULL ) return 0;
-      return 1 + noOfElements( root -> left) + noOfElements( root -> right);
+      return 1 + noOfElement( root -> left) + noOfElement( root -> right);
   }
   
   int rootsPosition( Node *root)
   {
       if( root == NULL ) return 0;
       
-      return 1 + noOfElements( root -> left );
+      return 1 + noOfElement( root -> left );
   }
   
     // Return the Kth smallest element in the given BST
     int KthSmallestElement(Node *root, int K) {
         // add code here.
-        if( K > noOfElements( root) ) return -1;
+        if( K > noOfElement( root) ) return -1;
         int position = rootsPosition( root );
         
         if( position == K ) return root -> data;
@@ -119,6 +120,7 @@ class Solution {
         
     }
 };
+
 
 //{ Driver Code Starts.
 int main() {
