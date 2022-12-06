@@ -22,9 +22,8 @@ class Solution
 	        {
 	            if(grid[i][j] == 1) 
 	            {
-	                pair<int,int> temp(i,j);
 	                ans[i][j] = distance;
-	                q.push(temp);
+	                q.push({i,j});
 	            }
 	        }
 	    }
@@ -43,8 +42,7 @@ class Solution
 	                int ny = temp.second + dir[i][1];
 	                if( nx >= 0 && ny >= 0 && nx < n && ny < m && ans[nx][ny] == -1 )
 	                {
-	                    pair<int,int> t(nx,ny);
-	                    q.push(t);
+	                    q.push({nx,ny});
 	                    ans[nx][ny] = distance;
 	                }
 	            }
@@ -54,6 +52,7 @@ class Solution
 	    
 	}
 };
+
 
 //{ Driver Code Starts.
 int main(){
