@@ -21,11 +21,10 @@ int main() {
 
 //Function to find out the number of ways we can place a black and a 
 //white Knight on this chessboard such that they cannot attack each other.
-
-long long int mul(long long int a,long long int b)
+long long int multiply(long long int a,long long int b)
 {
     if( b == 1) return a%1000000007;
-    long long int ans = mul( a,b/2);
+    long long int ans = multiply( a,b/2);
     if( b%2 == 0)
         return ((ans%1000000007) + (ans%1000000007))%1000000007;
     else
@@ -37,7 +36,7 @@ long long numOfWays(int N, int M)
 {
     // write code here
     
-    unsigned long long int totalWays = mul(N*M, (N*M) - 1)%1000000007;
+    unsigned long long int totalWays = multiply(N*M, (N*M) - 1)%1000000007;
     int dir[8][2] = { {2,1},{1,2},{-2,1},{-1,2},{2,-1},{1,-2},{-2,-1},{-1,-2} };
     int count = 0;
     for( int i = 0; i < N; i++)
