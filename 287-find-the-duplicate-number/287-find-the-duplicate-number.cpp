@@ -1,10 +1,6 @@
 class Solution {
 public:
-<<<<<<< HEAD
     //added comment in master
-=======
-    //comments in mybranch
->>>>>>> mybranch
     int findDuplicate(vector<int>& nums) {
         int slow = 0, fast = 0;
         slow = nums[slow];
