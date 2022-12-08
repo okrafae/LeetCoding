@@ -1,5 +1,6 @@
 class Solution {
 public:
+//comments
     int missingNumber(vector<int>& nums) {
         int n = nums.size();
         int missing = 0;
