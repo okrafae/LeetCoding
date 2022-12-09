@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //changes made
     int maxProfit(vector<int>& prices) {
         int minTillNow = INT_MAX, maxProfit = 0;
         for( int i = 0; i < prices.size(); i++)
