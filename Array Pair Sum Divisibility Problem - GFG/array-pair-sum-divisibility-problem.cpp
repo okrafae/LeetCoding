@@ -7,20 +7,17 @@ class Solution {
   public:
     bool canPair(vector<int> nums, int k) {
         // Code here.
-        vector<int> v(k,0);
+        vector<int> arr(k,0);
         int n = nums.size();
         if( n%2 != 0 ) return false;
         for( int i = 0; i < n; i++)
         {
-
-            v[(nums[i]%k)]++;
-            
+            arr[(nums[i]%k)]++;
         }
-        if( v[0]%2 != 0) return false;
+        if( arr[0]%2 != 0) return false;
         for( int i = 1; i<=k/2 ; i++)
         {
-            // cout << v[i] << " ";
-            if( v[i] != v[k-i] ) return false;
+            if( arr[i] != arr[k-i] ) return false;
         }
         return true;
     }
