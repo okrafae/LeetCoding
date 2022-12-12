@@ -37,6 +37,7 @@ class Solution {
       if( parent == -1 && child > 1) mark[node] = 1;
   }
   
+
     vector<int> articulationPoints(int V, vector<int>adj[]) {
         vector<int> vis(V,0), mark(V,0);
         int call = 0;
@@ -61,6 +62,8 @@ class Solution {
         // Code here
     }
 };
+        
+
 
 //{ Driver Code Starts.
 
