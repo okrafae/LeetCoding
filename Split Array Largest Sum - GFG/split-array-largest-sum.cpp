@@ -34,8 +34,10 @@ class Solution {
       return true;
   }
   
+  
     int splitArray(int arr[] ,int N, int K) {
         // code here
+        
         int maxElement = 0, totalSum = 0;
         for( int i = 0; i < N; i++)
         {
@@ -48,10 +50,8 @@ class Solution {
         while( low <= high )
         {
             int mid = low + ( high - low)/2;
-            // cout << low << " " << mid << " " << high << endl;
             if( validSplit( mid, arr, N , K , totalSum) )
             {
-                // cout << mid << endl;
                 ans = mid;
                 high = mid - 1;
             }
