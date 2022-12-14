@@ -8,6 +8,7 @@ class Solution{
 public:
     vector<int> findRange(string str, int n) {
         // code here
+
         vector<int> ans;
         int minSum = 1, sum = 0;
         int left = 1, right = 1, nextLeft = 0;
@@ -15,7 +16,6 @@ public:
         {
             int curr = (str[i] == '1' ) ? 1 : -1;
             sum += curr;
-            // cout << "sum " << sum << endl;
             if( minSum > sum )
             {
                 right = i + 1;
