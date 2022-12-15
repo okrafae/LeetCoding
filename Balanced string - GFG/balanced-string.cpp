@@ -11,8 +11,8 @@ class Solution {
     string BalancedString(int N) {
         // code here
         string ans = "";
-        string common = "abcdefghijklmnopqrstuvwxyz";
-        for( int i = 0; i < N/26; i++) ans += common;
+        string com = "abcdefghijklmnopqrstuvwxyz";
+        for( int i = 0; i < N/26; i++) ans += com;
         int n = N%26;
         if( N%2 == 0 )
         {
@@ -70,7 +70,6 @@ class Solution {
         
     }
 };
-
 
 //{ Driver Code Starts.
 int main() {
