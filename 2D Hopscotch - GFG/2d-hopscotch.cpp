@@ -12,7 +12,7 @@ public:
     int hopscotch(int n, int m, vector<vector<int>> mat, int ty, int i, int j)
     {
         // code here
-        int ans = 0;
+        int answer = 0;
         if( ty == 0)
         {
             if( j % 2 == 0 )
@@ -24,8 +24,7 @@ public:
                     int ny = j + dir_avantika[k][1];
                     if( nx >= 0 && nx < n && ny >= 0 && ny < m)
                     {
-                        // cout << nx << " " << ny << endl;
-                        ans += mat[nx][ny];
+                        answer += mat[nx][ny];
                     }
                 }
             }
@@ -38,18 +37,14 @@ public:
                     int ny = j + dir_avantika[k][1];
                     if( nx >= 0 && nx < n && ny >= 0 && ny < m)
                     {
-                        // cout << nx << " " << ny << endl;
-                        ans += mat[nx][ny];
+                        answer += mat[nx][ny];
                     }
                 }
             }
         }
         else
         {
-            // int dir_aakriti[12][2][2] = { {-1,-2},{0,-2},{1,-2},{1,-1},{2,0},{1,1},{1,2},{0,2},{-1,2},{-2,1},{-2,0},{-2,-1},{-1,-1},{-1,-2},{0,-2},{1,-2},{2,-1},{2,0},{2,1},{1,2},{0,2},{-1,2},{-1,1},{-2,0} };
-            // if( j%2 == 0)
             int dir_aakriti_even[12][2] = { {-1,-2},{0,-2},{1,-2},{1,-1},{2,0},{1,1},{1,2},{0,2},{-1,2},{-2,1},{-2,0},{-2,-1} };
-            // else
             int dir_aakriti_odd[12][2] = { {-1,-1},{-1,-2},{0,-2},{1,-2},{2,-1},{2,0},{2,1},{1,2},{0,2},{-1,2},{-1,1},{-2,0} };
             if( j % 2 == 0 )
             {
@@ -59,8 +54,7 @@ public:
                     int ny = j + dir_aakriti_even[k][1];
                     if( nx >= 0 && nx < n && ny >= 0 && ny < m)
                     {
-                        // cout << nx << " " << ny << endl;
-                        ans += mat[nx][ny];
+                        answer += mat[nx][ny];
                     }
                 }
             }
@@ -72,13 +66,12 @@ public:
                     int ny = j + dir_aakriti_odd[k][1];
                     if( nx >= 0 && nx < n && ny >= 0 && ny < m)
                     {
-                        // cout << nx << " " << ny << endl;
-                        ans += mat[nx][ny];
+                        answer += mat[nx][ny];
                     }
                 }
             }
         }
-        return ans;
+        return answer;
     }
 };
 
