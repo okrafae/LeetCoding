@@ -10,11 +10,11 @@ class Solution{
 public:
     int waysToBreakNumber(int N){
         // code here 
-        long long int n1 = (N+1)%1000000007;
-        long long int n2 = (N+2)%1000000007;
-        if( n1%2 == 0 ) n1 /= 2;
-        else n2 /= 2;
-        return (n1*n2)%1000000007;
+        long long int n = (N+1)%1000000007;
+        long long int m = (N+2)%1000000007;
+        if( n%2 == 0 ) n /= 2;
+        else m /= 2;
+        return (n*m)%1000000007;
     }
 };
 
