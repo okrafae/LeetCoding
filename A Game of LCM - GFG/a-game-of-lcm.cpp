@@ -8,11 +8,13 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
-    long long int gcd(long long int a,long long int b)
+    
+     long long int hcf(long long int a,long long int b)
     {
         if( b == 0) return a;
-        return gcd( b, a%b );
+        return hcf( b, a%b );
     }
+    
   public:
     long long maxGcd(int N) {
         // code here
@@ -20,7 +22,7 @@ class Solution {
         int count1 = 1;
         for( int i = N-1; i >= 1; i--)
         {
-            if( gcd( ans1, i) == 1 )
+            if( hcf( ans1, i) == 1 )
             {
                 ans1 *= i;
                 count1++;
@@ -31,7 +33,7 @@ class Solution {
         int count2 = 1;
         for( int i = N-2; i >= 1; i--)
         {
-            if( gcd( ans2, i) == 1 )
+            if( hcf( ans2, i) == 1 )
             {
                 ans2 *= i;
                 count2++;
