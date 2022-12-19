@@ -10,6 +10,7 @@ class Solution {
   public:
     int minimumCost(vector<vector<int>>& flights, int n, int k) {
         // code here
+  
         vector<vector<vector<int>>> graph(n+1);
         for( int i = 0; i < flights.size(); i++)
         {
@@ -56,6 +57,7 @@ class Solution {
         return ans;
     }
 };
+
 
 
 //{ Driver Code Starts.
