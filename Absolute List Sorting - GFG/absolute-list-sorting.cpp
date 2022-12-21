@@ -46,15 +46,15 @@ struct Node
 class Solution{
     
 public:
-    Node* sortList(Node** head)
+    Node* sortList(Node* head)
     {
-        // Your Code Here
-        Node* currHead =  *head ;
-        Node* curr = *head ;
-        Node* prev = *head ;
+
+        Node* currHead =  head ;
+        Node* curr = head ;
+        Node* prev = head ;
         while( curr != NULL )
         {
-            if( curr == *head ) curr = curr -> next;
+            if( curr == head ) curr = curr -> next;
             else if( curr -> data < 0 )
             {
                 prev -> next = curr -> next;
@@ -72,7 +72,6 @@ public:
         return currHead;
     }
 };
-
 
 //{ Driver Code Starts.
 
@@ -100,7 +99,7 @@ int main()
 		// printList(head);
 		
 		Solution ob;
-		head=ob.sortList(&head);
+		head=ob.sortList(head);
 
 		printList(head);
 
