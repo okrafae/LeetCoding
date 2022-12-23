@@ -10,13 +10,13 @@ class Solution {
     {
         if( i > j ) return 0;
         if( dp[i][j] != -1) return dp[i][j];
-        int maxi = INT_MIN;
+        int maxa = INT_MIN;
         for( int ind = i; ind <= j; ind++)
         {
             int cost = arr[i-1] * arr[ind] * arr[j+1] + helper( i, ind - 1, arr, dp) + helper( ind + 1, j, arr, dp);
-            maxi = max( maxi, cost);
+            maxa = max( maxa, cost);
         }
-        return dp[i][j] = maxi;
+        return dp[i][j] = maxa;
     }
     
 public:
