@@ -13,17 +13,15 @@ class Solution{
   long long int wineSelling(vector<int>& Arr, int N){
       //Code here.
       
-      long long int ans = 0, sum = 0;
+      long long int ans = 0, currSum = 0;
       for( int i = 0; i < N; i++)
       {
-          sum += Arr[i];
-          ans += abs(sum);
+          currSum += Arr[i];
+          ans += abs(currSum);
       }
       return ans;
   }
 };
-
-
 
 //{ Driver Code Starts.
 
