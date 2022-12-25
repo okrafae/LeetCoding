@@ -24,18 +24,6 @@ public:
             maxi = max( {maxi, rowSum[i], colSum[i]});
         }
         if( maxi - mini <= 0 ) return -1;
-        // cout << maxi << " " << mini << " " << maxi - mini << endl;
-        // for( int i = 0; i < n; i++)
-        // {
-        //     for( int j = 0; j < n; j++)
-        //     {
-        //         if( matrix[i][j] == 0 )
-        //         {
-        //             matrix[i][j] = maxi - mini;
-        //             break;
-        //         }
-        //     }
-        // }
         long long int sum, d1 = 0, d2= 0;
         for( int i = 0; i < n; i++)
         {
@@ -60,18 +48,14 @@ public:
                     rowSum[i] += maxi - mini;
                     colSum[j] += maxi - mini;
                 }
-                // cout << matrix[i][j] << " ";
             }
-            // cout << endl;
         }
-        // cout << d1 << " " << d2 << endl;
         if( d1 != d2 ) return -1;
         else 
         {
             sum = d1;
             for( int i = 0; i < n; i++)
             {
-                // cout << rowSum[i] << " " << colSum[i] << endl;
                 if( sum != rowSum[i] || sum != colSum[i]) return -1;
             }
         }
