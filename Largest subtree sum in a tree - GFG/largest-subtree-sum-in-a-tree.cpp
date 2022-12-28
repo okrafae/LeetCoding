@@ -77,12 +77,11 @@ Node* buildTree(string str) {
 
 
 // } Driver Code Ends
-//User function Template for C+
-
+//User function Template for C++
 
 class Solution {
   public:
-    // Function to find largest subtree sum.
+
     int helper(Node* root)
     {
         if( !root ) return 0;
@@ -114,7 +113,6 @@ class Solution {
         return ans;
     }
 };
-
 
 //{ Driver Code Starts.
 
