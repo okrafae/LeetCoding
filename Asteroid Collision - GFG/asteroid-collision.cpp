@@ -8,7 +8,8 @@ class Solution {
   public:
     vector<int> asteroidCollision(int N, vector<int> &asteroids) {
         // code here
-        vector<int> ans;
+
+        vector<int> answer;
         stack<int> st;
         for( int i = 0; i < N; i++)
         {
@@ -36,13 +37,14 @@ class Solution {
         while( !st.empty() )
         {
             int temp = st.top();
-            ans.push_back(temp);
+            answer.push_back(temp);
             st.pop();
         }
-        reverse(ans.begin(),ans.end());
-        return ans;
+        reverse(answer.begin(),answer.end());
+        return answer;
     }
 };
+
 
 //{ Driver Code Starts.
 
