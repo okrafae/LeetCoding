@@ -7,7 +7,6 @@ using namespace std;
 
 // } Driver Code Ends
 //User function Template for C++
-
 class Solution{
     public:
     int carpetBox(int A, int B, int C, int D){
