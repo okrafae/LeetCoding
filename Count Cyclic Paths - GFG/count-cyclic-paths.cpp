@@ -9,7 +9,7 @@ using namespace std;
 
 class Solution{   
 public:
-    int countPaths(int N){
+     int countPaths(int N){
         // code here 
         if( N == 1 ) return 0;
         if( N == 2 ) return 3;
